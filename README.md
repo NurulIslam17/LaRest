@@ -2,8 +2,8 @@
 ## SSLCommerz Setup :
 
 - Add To .env
+
         SSLCZ_STORE_ID=your_store_id
-  
         SSLCZ_STORE_PASSWORD=your_store_password
         SSLCZ_TESTMODE=true
 
