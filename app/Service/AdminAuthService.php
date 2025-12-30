@@ -30,7 +30,7 @@ class AdminAuthService
             ], 401);
         }
 
-        $token = $admin->createToken('admin-token')->plainTextToken;
+        $token = $admin->createToken('admin-token', ['admin'])->plainTextToken;
         return [
             "admin" => new AdminResource($admin),
             "token" => $token
