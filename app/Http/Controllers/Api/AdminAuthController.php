@@ -19,16 +19,6 @@ class AdminAuthController extends Controller
         $this->adminAuthService = $adminAuthService;
     }
 
-    public function register(AdminRegisterRequest $request)
-    {
-        $user =  $this->adminAuthService->register($request->all());
-        $token = $user->createToken('user-token')->plainTextToken;
-        return response()->json([
-            'admin' => new AdminResource($user),
-            'token' => $token
-        ], 201);
-    }
-
     public function login(Request $request)
     {
         $adminResponse =  $this->adminAuthService->login($request->all());

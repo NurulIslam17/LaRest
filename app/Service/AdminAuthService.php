@@ -20,12 +20,6 @@ class AdminAuthService
         $this->adminAuthRepository = $adminAuthRepository;
     }
 
-    public function register($data)
-    {
-        $data['password'] = bcrypt($data['password']);
-        return $this->adminAuthRepository->register($data);
-    }
-
     public function login($data)
     {
         $admin = Admin::where('email', $data['email'])->first();
