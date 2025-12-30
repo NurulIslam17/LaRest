@@ -5,6 +5,7 @@ namespace App\Service;
 use App\Http\Resources\UserResource;
 use App\Repository\UserAuthRepository;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Log;
 
 class UserAuthService
 {
@@ -17,8 +18,13 @@ class UserAuthService
 
     public function register($data)
     {
+        if (isset($data['photo'])) {
+            $url = storeImage($data['photo'], 'photos');
+            $data["photo"] = $url;
+        }
         $data["password"] = bcrypt($data["password"]);
-        return $this->userAuthRepository->register($data);
+        $user =  $this->userAuthRepository->register($data);
+        return $user;
     }
 
     public function login($data)
