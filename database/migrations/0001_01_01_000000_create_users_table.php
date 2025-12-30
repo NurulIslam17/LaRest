@@ -17,8 +17,6 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->string('photo')->nullable();
             $table->string('password');
-            $table->string('phone');
-            $table->string("status")->default(1)->comment('0 = pending, 1 = Active, 2 = suspended');
             $table->timestamps();
         });
 
