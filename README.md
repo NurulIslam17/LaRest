@@ -53,6 +53,33 @@ American Express:
     CVV: 111
 Mobile OTP: 111111 or 123456
 
+## File Import and Export
+
+- Used Job Queue for backend processing
+- Sent email to a static user for completing the importing.
+- Mailtrap service is used for sending email.
+- All unnecessary CSV files are deleted from the server using task scheduling; the schedule runs every five minutes.
+
+
+- Update .env
+
+        MAIL_MAILER=smtp
+        MAIL_HOST=your_sandbox.smtp.mailtrap.io
+        MAIL_PORT=maitrap_port
+        MAIL_USERNAME=maitrap_username
+        MAIL_PASSWORD=maitrap_password
+        MAIL_FROM_ADDRESS="hello@example.com"
+        MAIL_FROM_NAME="${APP_NAME}"
+
+  -Run in terminal :
+          
+        php artisan queue:work
+        php artisan schedule:run or php artisan schedule:work
+
+
+
+
+
 
 
 ## Title
