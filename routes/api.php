@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminDashboardController;
 use App\Http\Controllers\Api\AdminAuthController;
+use App\Http\Controllers\Api\CsvImportController;
 use App\Http\Controllers\Api\UserAuthController;
 use App\Http\Controllers\UserDashboardController;
 use Illuminate\Support\Facades\Route;
@@ -22,4 +23,6 @@ Route::post("/v1/admin/login", [AdminAuthController::class, 'login']);
 Route::middleware(['auth:admin', 'admin.only'])->prefix("/v1/admin")->group(function () {
 
     Route::get("/dashboard", [AdminDashboardController::class, 'dashboard']);
+
+    Route::post("/csv-import", [CsvImportController::class, 'csvImport']);
 });
