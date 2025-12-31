@@ -59,6 +59,7 @@ Mobile OTP: 111111 or 123456
 - Sent email to a static user for completing the importing.
 - Mailtrap service is used for sending email.
 - All unnecessary CSV files are deleted from the server using task scheduling; the schedule runs every five minutes.
+- File Link for Employee csv  :  https://docs.google.com/spreadsheets/d/1zp1JCnt9BVCveOqUsqqgMGTWeyGCTQsvapFyC9_-sus/edit?usp=sharing
 
 
 - Update .env
@@ -71,10 +72,14 @@ Mobile OTP: 111111 or 123456
         MAIL_FROM_ADDRESS="hello@example.com"
         MAIL_FROM_NAME="${APP_NAME}"
 
-  -Run in terminal :
+  - Run in terminal :
           
         php artisan queue:work
         php artisan schedule:run or php artisan schedule:work
+
+  - For CSV Export run in browser :
+          
+        http://127.0.0.1:8000/csv-export
 
 
 
