@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\ExportController;
 use App\Http\Controllers\SslCommerzPaymentController;
 use Illuminate\Support\Facades\Route;
@@ -25,3 +26,6 @@ Route::post('/ipn', [SslCommerzPaymentController::class, 'ipn']);
 
 // CSV Export
 Route::get('/csv-export', [ExportController::class, 'csvExport']);
+
+Route::get('/empoyee',[EmployeeController::class,'create']);
+Route::post('/empoyee',[EmployeeController::class,'store'])->name('employees.store');
