@@ -27,5 +27,6 @@ Route::post('/ipn', [SslCommerzPaymentController::class, 'ipn']);
 // CSV Export
 Route::get('/csv-export', [ExportController::class, 'csvExport']);
 
-Route::get('/empoyee',[EmployeeController::class,'create']);
-Route::post('/empoyee',[EmployeeController::class,'store'])->name('employees.store');
+Route::get('/empolyee',[EmployeeController::class,'create']);
+Route::post('/empolyee',[EmployeeController::class,'store'])->name('employees.store');
+Route::get("/employee/list",[EmployeeController::class, 'index'])->name('employee.list');
