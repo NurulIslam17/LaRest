@@ -14,7 +14,6 @@ class EmployeeController extends Controller
     public function index()
     {
         $employees = Employee::all();
-        Log::info($employees);
         return view('employee.index',compact('employees'));
     }
 

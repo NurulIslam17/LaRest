@@ -45,7 +45,6 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    {{-- @dd($employees); --}}
                                     @foreach ($employees as $key => $employee)
                                         <tr>
                                             <td>{{ $loop->iteration }}</td>
